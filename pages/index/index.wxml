@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<view class="cont cont_index">
+    <!-- 搜索框 -->
+    <SearchInput></SearchInput>
+    <!-- 轮播图 -->
+    <view class="banner">
+        <swiper
+            autoplay="false" 
+            interval="5000" 
+            duration="1000" 
+            indicator-dots
+            circular="{{true}}"
+        >
+            <swiper-item 
+                class=""
+                item-id="" 
+                wx:for="{{swiperList}}"
+                wx:key="goods_id">
+                <navigator url="/pages/goods_detail/index?goods_id={{item.goods_id}}"  open-type="navigate">
+                    <image mode="widthFix" src="{{item.image_src}}" />
+                </navigator>
+                
+            </swiper-item>
+        </swiper>
+    </view>
+
+    <!-- 导航 start -->
+    <view class="cate">
+        <navigator 
+        wx:for="{{ catesList }}"
+        wx:key="name"
+        url="/pages/category/index"
+        open-type="switchTab"
+        >
+            <image  mode="widthFix" src="{{ item.image_src }}"  />
+        </navigator>
+    </view>
+    <!-- 导航 end -->
+
+    <!-- 楼层 start -->
+    <view class="floor" >
+        <view class="floor_groud" 
+            wx:for="{{floorList}}"
+            wx:for-item="item"
+            wx:for-index="index"
+            wx:key="index"
+        >
+            <view class="floor_title" >
+                <image class="floor_img" src="{{item.floor_title.image_src}}" mode="widthFix" >
+                </image>
+            </view>
+            <view class="floor_list" >
+                <navigator class="floor_item floor_item{{index2}}"
+                    wx:for="{{item.product_list}}"
+                    wx:for-item="item2"
+                    wx:for-index="index2"
+                    wx:key="index2"
+                    url="/pages/goods_list/index?query={{item2.name}}"
+                >
+                    <image class="product_img " src="{{item2.image_src}}" mode="{{ index2==0?'widthFix':'scaleToFill' }}" >
+                    </image>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <!-- 楼层 end -->
+
+
+</view>
+

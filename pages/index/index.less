@@ -1,0 +1,54 @@
+.cont_index{
+    width: 100%;
+    .banner{//广告位
+        width: 100%;
+        swiper{
+            width: 750rpx;
+            height: 340rpx;
+            swiper-item{
+                image{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .cate{//分类导航
+       display: flex;
+        
+       navigator{
+            flex: 1;
+            padding: 24rpx;;
+            image{
+                width: 100%;
+            }
+        }
+    }
+    .floor{//楼层
+        .floor_groud{
+            .floor_title{
+                .floor_img{
+                    width: 100%;
+                }
+            }
+            .floor_list{
+                overflow: hidden;
+                .floor_item{
+                    float: left;
+                    width: 33.3%;
+                    &:nth-last-child(-n+4){
+                        height: 33.33vw * 386 / 232 / 2;
+                        padding-left: 10rpx  ;
+                    }
+                    &.floor_item1,&.floor_item2{
+                        padding-bottom: 10rpx;
+                    }
+                    .product_img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+    
+}

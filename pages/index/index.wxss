@@ -1,0 +1,45 @@
+.cont_index {
+  width: 100%;
+}
+.cont_index .banner {
+  width: 100%;
+}
+.cont_index .banner swiper {
+  width: 750rpx;
+  height: 340rpx;
+}
+.cont_index .banner swiper swiper-item image {
+  width: 100%;
+}
+.cont_index .cate {
+  display: flex;
+}
+.cont_index .cate navigator {
+  flex: 1;
+  padding: 24rpx;
+}
+.cont_index .cate navigator image {
+  width: 100%;
+}
+.cont_index .floor .floor_groud .floor_title .floor_img {
+  width: 100%;
+}
+.cont_index .floor .floor_groud .floor_list {
+  overflow: hidden;
+}
+.cont_index .floor .floor_groud .floor_list .floor_item {
+  float: left;
+  width: 33.3%;
+}
+.cont_index .floor .floor_groud .floor_list .floor_item:nth-last-child(-n+4) {
+  height: 27.72711207vw;
+  padding-left: 10rpx  ;
+}
+.cont_index .floor .floor_groud .floor_list .floor_item.floor_item1,
+.cont_index .floor .floor_groud .floor_list .floor_item.floor_item2 {
+  padding-bottom: 10rpx;
+}
+.cont_index .floor .floor_groud .floor_list .floor_item .product_img {
+  width: 100%;
+  height: 100%;
+}
