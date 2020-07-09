@@ -98,50 +98,82 @@ Page({
       // 准备上传图片
       chooseImgs.forEach((v, i) => {
         console.log(v)
-        wx.uploadFile({
-          url: 'http://images.ac.cn/api/upload',
-          filePath: v,
-          name: 'image',
-          formData: {
-            'apiType': "this、ali、huluxia",
-            'privateStorage': 'ftp、oos、cos',
-            'token': "6504f5f00a98ea74a87f416c3f1e"
-          },
-          success: (result) => {
-            //图片上传失败了，可能操作有问题
-            console.log(result);
-            let url = JSON.parse(result.data).url;
-            this.UpLoadImgs.push(url);
+        //虚假操作
+        // 所有图片都上传了才触发
+        if (i === chooseImgs.length - 1) {
+          // console.log('已提交到后台');
+          
+          wx.hideLoading();
+          wx.showToast({
+            title: "提交成功",
+            icon: 'success',
+            mask: true
+          });
+          // 重置页面
+          this.setData({
+            textVal: '',
+            chooseImgs: []
+          });
+          // 返回上一个页面
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1
+            });
+          }, 600);
+          
+        }
 
-            // 所有图片都上传了才触发
-            if (i === chooseImgs.length - 1) {
-              console.log('已提交到后台');
-              wx.hideLoading();
-              // 重置页面
-              this.setData({
-                textVal: '',
-                chooseImgs: []
-              });
-              // 返回上一个页面
-              wx.navigateBack({
-                delta: 1
-              });
-            }
-          },
-          fail: () => { },
-          complete: () => { }
-        });
+        //真实操作
+        // wx.uploadFile({
+        //   url: 'http://images.ac.cn/api/upload',
+        //   filePath: v,
+        //   name: 'image',
+        //   formData: {
+        //     'apiType': "this、ali、huluxia",
+        //     'privateStorage': 'ftp、oos、cos',
+        //     'token': "6504f5f00a98ea74a87f416c3f1e"
+        //   },
+        //   success: (result) => {
+        //     //图片上传失败了，可能操作有问题
+        //     console.log(result);
+        //     let url = JSON.parse(result.data).url;
+        //     this.UpLoadImgs.push(url);
+
+        //     // 所有图片都上传了才触发
+        //     if (i === chooseImgs.length - 1) {
+        //       console.log('已提交到后台');
+        //       wx.hideLoading();
+        //       // 重置页面
+        //       this.setData({
+        //         textVal: '',
+        //         chooseImgs: []
+        //       });
+        //       // 返回上一个页面
+        //       wx.navigateBack({
+        //         delta: 1
+        //       });
+        //     }
+        //   },
+        //   fail: () => { },
+        //   complete: () => { }
+        // });
       })
     } else {
-      console.log('已提交文本到后台');
+      wx.showToast({
+        title: "文本提交成功",
+        icon: 'success',
+        mask: true
+      });
       // 重置页面
       this.setData({
         textVal: ''
       });
       // 返回上一个页面
-      wx.navigateBack({
-        delta: 1
-      });
+      setTimeout(() => {
+        wx.navigateBack({
+          delta: 1
+        });
+      }, 600);
     }
 
 

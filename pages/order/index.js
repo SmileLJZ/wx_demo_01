@@ -48,7 +48,8 @@ Page({
     let curPages = getCurrentPages();
     let currentPages = curPages[curPages.length - 1];
     // 获取url上的type参数
-    const {type}=currentPages.options;
+    const {type=1}=currentPages.options ;
+    // console.log(type);
     // 根据索引 选中标题
     this.changTitleByIndex(type-1);
     // this.getOrders(type);
@@ -59,8 +60,7 @@ Page({
     //   data: { type }
     // });
     // 假的数据
-    // console.log(type);
-    
+    console.log(type);
     const orders_all= require('../../data/json.js');
     let orders_arr =orders_all[`orders_all${type}`];
     this.setData({

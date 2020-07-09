@@ -11,19 +11,19 @@
   0%{}
   100%{background:rgba(0,0,0,0.7);}
 }
-.wrapAnimateOut{animation: wrapAnimateOut 1s 0.2s linear forwards}
+.wrapAnimateOut{animation: wrapAnimateOut 0.2s 0.2s linear forwards}
 @keyframes wrapAnimateOut{
   0%{background:rgba(0,0,0,0.7);}
   100%{background:rgba(0,0,0,0);}
 }
-.popupAnimate{animation: popupAnimate 1.2s linear forwards}
+.popupAnimate{animation: popupAnimate 0.4s linear forwards}
 @keyframes popupAnimate{
   0%{}
   60%{top:47%;opacity: 1;}
   80%{top:53%;opacity: 1;}
   100%{top:50%;opacity: 1;}
 }
-.popupAnimateOut{animation: popupAnimateOut 1.2s linear forwards}
+.popupAnimateOut{animation: popupAnimateOut 0.4s linear forwards}
 @keyframes popupAnimateOut{
   0%{top:50%;opacity: 1;}
   20%{top:47%;opacity: 1;}

@@ -122,7 +122,7 @@ Page({
     await this.selectComponent("#popup").hidePopup();
     setTimeout(() => {
       wxPro.showToast({ title: "支付失败" });
-    }, 1200)
+    }, 400)
   },
   //确认事件
   async _success() {
@@ -141,7 +141,7 @@ Page({
       wxPro.navigateTo({
         url: '/pages/order/index'
       });
-    }, 1200);
+    }, 400);
   }
 
 })
